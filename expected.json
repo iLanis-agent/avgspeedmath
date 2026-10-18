@@ -1,0 +1,424 @@
+[
+ {
+  "fn": "tripTruth",
+  "args": [
+   60,
+   60,
+   60,
+   30
+  ],
+  "expected": "Covering 60 at 60 and 60 at 30 takes 3 h 0 min and averages 40, not 45, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   60,
+   60,
+   60,
+   60
+  ],
+  "expected": "Covering 60 at 60 and 60 at 60 takes 2 h 0 min and averages 60, the same as the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   100,
+   50,
+   100,
+   50
+  ],
+  "expected": "Covering 100 at 50 and 100 at 50 takes 4 h 0 min and averages 50, the same as the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   10,
+   60,
+   90,
+   30
+  ],
+  "expected": "Covering 10 at 60 and 90 at 30 takes 3 h 10 min and averages about 31.58, not 45, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   90,
+   60,
+   10,
+   30
+  ],
+  "expected": "Covering 90 at 60 and 10 at 30 takes 1 h 50 min and averages about 54.55, not 45, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   1,
+   1,
+   1,
+   1000
+  ],
+  "expected": "Covering 1 at 1 and 1 at 1000 takes about 1 h 0 min and averages about 2, not 500.5, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   100000,
+   1000,
+   100000,
+   1
+  ],
+  "expected": "Covering 100000 at 1000 and 100000 at 1 takes 100100 h 0 min and averages about 2, not 500.5, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   1,
+   1000,
+   1,
+   1000
+  ],
+  "expected": "Covering 1 at 1000 and 1 at 1000 takes under 1 min and averages 1000, the same as the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   30,
+   60,
+   60,
+   30
+  ],
+  "expected": "Covering 30 at 60 and 60 at 30 takes 2 h 30 min and averages 36, not 45, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   7,
+   3,
+   5,
+   11
+  ],
+  "expected": "Covering 7 at 3 and 5 at 11 takes about 2 h 47 min and averages about 4.3, not 7, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   120,
+   40,
+   60,
+   80
+  ],
+  "expected": "Covering 120 at 40 and 60 at 80 takes 3 h 45 min and averages 48, not 60, the plain mean of the two speeds."
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   0,
+   60,
+   60,
+   30
+  ],
+  "expected": "ERR:first distance must be a whole number from 1 to 100000"
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   60,
+   0,
+   60,
+   30
+  ],
+  "expected": "ERR:first speed must be a whole number from 1 to 1000"
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   60,
+   60,
+   100001,
+   30
+  ],
+  "expected": "ERR:second distance must be a whole number from 1 to 100000"
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   60,
+   60,
+   60,
+   1001
+  ],
+  "expected": "ERR:second speed must be a whole number from 1 to 1000"
+ },
+ {
+  "fn": "tripTruth",
+  "args": [
+   60.5,
+   60,
+   60,
+   30
+  ],
+  "expected": "ERR:first distance must be a whole number from 1 to 100000"
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   100,
+   60
+  ],
+  "expected": "Covering 100 at 60 takes 1 h 40 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   60,
+   60
+  ],
+  "expected": "Covering 60 at 60 takes 1 h 0 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   1,
+   1000
+  ],
+  "expected": "Covering 1 at 1000 takes under 1 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   1,
+   7
+  ],
+  "expected": "Covering 1 at 7 takes about 9 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   50,
+   100
+  ],
+  "expected": "Covering 50 at 100 takes 30 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   100000,
+   1
+  ],
+  "expected": "Covering 100000 at 1 takes 100000 h 0 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   90,
+   60
+  ],
+  "expected": "Covering 90 at 60 takes 1 h 30 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   10,
+   60
+  ],
+  "expected": "Covering 10 at 60 takes 10 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   5,
+   40
+  ],
+  "expected": "Covering 5 at 40 takes about 8 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   200,
+   3
+  ],
+  "expected": "Covering 200 at 3 takes 66 h 40 min."
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   0,
+   60
+  ],
+  "expected": "ERR:distance must be a whole number from 1 to 100000"
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   100,
+   0
+  ],
+  "expected": "ERR:speed must be a whole number from 1 to 1000"
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   100,
+   1001
+  ],
+  "expected": "ERR:speed must be a whole number from 1 to 1000"
+ },
+ {
+  "fn": "timeTruth",
+  "args": [
+   100.5,
+   60
+  ],
+  "expected": "ERR:distance must be a whole number from 1 to 100000"
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   120,
+   60,
+   40,
+   60
+  ],
+  "expected": "To average 60 over 120, the last 60 has to be covered at 120, after the first 60 at 40."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   120,
+   60,
+   60,
+   60
+  ],
+  "expected": "To average 60 over 120, the last 60 has to be covered at 60, after the first 60 at 60."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   120,
+   60,
+   120,
+   60
+  ],
+  "expected": "To average 60 over 120, the last 60 has to be covered at 40, after the first 60 at 120."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   50,
+   30,
+   60
+  ],
+  "expected": "No speed on the last 50 reaches an average of 60 over 100: the first 50 at 30 already uses all the time 100 allows at 60."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   50,
+   30,
+   40
+  ],
+  "expected": "To average 40 over 100, the last 50 has to be covered at 60, after the first 50 at 30."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   50,
+   30,
+   30
+  ],
+  "expected": "To average 30 over 100, the last 50 has to be covered at 30, after the first 50 at 30."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   99,
+   50,
+   51
+  ],
+  "expected": "No speed on the last 1 reaches an average of 51 over 100: the first 99 at 50 already uses all the time 100 allows at 51."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100000,
+   1,
+   1,
+   1
+  ],
+  "expected": "To average 1 over 100000, the last 99999 has to be covered at 1, after the first 1 at 1."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   1,
+   100,
+   100
+  ],
+  "expected": "To average 100 over 100, the last 99 has to be covered at 100, after the first 1 at 100."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   10,
+   1,
+   1000,
+   10
+  ],
+  "expected": "To average 10 over 10, the last 9 has to be covered at about 9.01, after the first 1 at 1000."
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   100,
+   50,
+   50
+  ],
+  "expected": "ERR:distance covered must be less than the total distance"
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   150,
+   50,
+   50
+  ],
+  "expected": "ERR:distance covered must be less than the total distance"
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   0,
+   1,
+   50,
+   50
+  ],
+  "expected": "ERR:total distance must be a whole number from 1 to 100000"
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   50,
+   0,
+   50
+  ],
+  "expected": "ERR:speed so far must be a whole number from 1 to 1000"
+ },
+ {
+  "fn": "needTruth",
+  "args": [
+   100,
+   50,
+   30,
+   1001
+  ],
+  "expected": "ERR:target average must be a whole number from 1 to 1000"
+ }
+]
