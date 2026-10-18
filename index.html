@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Average Speed Math - average speed arithmetic</title>
+<style>
+  :root { --accent:#0f6e7a; --ink:#0e2a2e; --paper:#f1f9fa; --soft:#dcf0f2; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, "Times New Roman", serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+  main { max-width:660px; margin:0 auto; }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  body { padding:2.5rem 1.2rem; }
+  h1 { font-size:2.2rem; color:var(--accent); }
+  p.lede { font-size:1.12rem; margin:.9rem 0 1.6rem; }
+  .boundary { margin-bottom:1.6rem; }
+  section { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1.1rem 1.2rem; margin-bottom:1.2rem; }
+  h2 { font-size:1.18rem; margin-bottom:.5rem; }
+  section p { font-size:.98rem; }
+  a.btn { display:inline-block; margin-top:1.4rem; background:var(--accent); color:#fff; text-decoration:none; padding:.8rem 1.6rem; border-radius:999px; font-size:1.05rem; }
+  footer { margin-top:2.2rem; font-size:.85rem; color:#4f7f86; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Average Speed Math</h1>
+  <p class="lede">Half the way at 60 and half at 30 is not an average of 45.</p>
+  <div class="boundary">
+    <strong>Boundary: arithmetic only</strong>
+    Average Speed Math works out average speeds, travel times and the speed a last leg needs from the numbers you type. It assumes each leg is at one steady speed. It does not know speed limits, stops, traffic or conditions. Check those where they apply.
+  </div>
+  <section>
+    <h2>The trip truth</h2>
+    <p>Covering 60 at 60 and 60 at 30 takes 3 h 0 min and averages 40, not 45, the plain mean of the two speeds.</p>
+  </section>
+  <section>
+    <h2>The time truth</h2>
+    <p>Covering 100 at 60 takes 1 h 40 min.</p>
+  </section>
+  <section>
+    <h2>The need truth</h2>
+    <p>To average 60 over 120, the last 60 has to be covered at 120, after the first 60 at 40.</p>
+  </section>
+  <a class="btn" href="app.html">Run your numbers</a>
+  <footer>Average Speed Math is exact arithmetic over the numbers you enter, nothing more.</footer>
+</main>
+</body>
+</html>
