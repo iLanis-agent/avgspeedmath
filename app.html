@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Average Speed Math - app</title>
+<style>
+  :root { --accent:#0f6e7a; --ink:#0e2a2e; --paper:#f1f9fa; --soft:#dcf0f2; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, "Times New Roman", serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+  main { max-width:660px; margin:0 auto; }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  body { padding:2rem 1.2rem; }
+  h1 { font-size:1.8rem; color:var(--accent); }
+  .boundary { margin:1rem 0 1.4rem; }
+  .panel { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1rem 1.1rem; margin-bottom:1.1rem; }
+  h2 { font-size:1.1rem; margin-bottom:.6rem; }
+  p.note { font-size:.9rem; margin-bottom:.4rem; }
+  label { display:block; font-size:.9rem; margin:.45rem 0 .1rem; }
+  input, select { width:100%; padding:.45rem .55rem; font-size:1rem; border:1px solid #a9d3d8; border-radius:6px; background:#fff; color:var(--ink); }
+  .row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:.6rem; }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+  .out { margin-top:.7rem; font-size:.98rem; background:#fff; border:1px dashed #a9d3d8; border-radius:6px; padding:.6rem .7rem; min-height:2.4rem; }
+  .out.err { border-color:#b03030; color:#8a1f1f; }
+  footer { margin-top:1.8rem; font-size:.85rem; color:#4f7f86; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Average Speed Math</h1>
+  <div class="boundary">
+    <strong>Boundary: arithmetic only</strong>
+    This page works out average speeds, travel times and the speed a last leg needs from the numbers you type. It assumes each leg is at one steady speed. It does not know speed limits, stops, traffic or conditions. Check those where they apply.
+  </div>
+
+  <div class="panel">
+    <h2>The trip truth</h2>
+    <p class="note">Two legs, each at its own steady speed. Distance and speed can be in any one unit, such as km and km/h.</p>
+    <div class="row2">
+      <div><label for="t-d1">First distance</label><input id="t-d1" type="number" step="1" value="60"></div>
+      <div><label for="t-s1">First speed (per hour)</label><input id="t-s1" type="number" step="1" value="60"></div>
+      <div><label for="t-d2">Second distance</label><input id="t-d2" type="number" step="1" value="60"></div>
+      <div><label for="t-s2">Second speed (per hour)</label><input id="t-s2" type="number" step="1" value="30"></div>
+    </div>
+    <div class="out" id="t-out"></div>
+  </div>
+
+  <div class="panel">
+    <h2>The time truth</h2>
+    <p class="note">One distance at one speed.</p>
+    <div class="row2">
+      <div><label for="m-d">Distance</label><input id="m-d" type="number" step="1" value="100"></div>
+      <div><label for="m-s">Speed (per hour)</label><input id="m-s" type="number" step="1" value="60"></div>
+    </div>
+    <div class="out" id="m-out"></div>
+  </div>
+
+  <div class="panel">
+    <h2>The need truth</h2>
+    <p class="note">The speed the last part needs to reach a target average over the whole distance.</p>
+    <div class="row2">
+      <div><label for="n-t">Total distance</label><input id="n-t" type="number" step="1" value="120"></div>
+      <div><label for="n-d">Distance covered so far</label><input id="n-d" type="number" step="1" value="60"></div>
+      <div><label for="n-s">Speed so far (per hour)</label><input id="n-s" type="number" step="1" value="40"></div>
+      <div><label for="n-a">Target average (per hour)</label><input id="n-a" type="number" step="1" value="60"></div>
+    </div>
+    <div class="out" id="n-out"></div>
+  </div>
+
+  <footer>Average Speed Math is exact arithmetic over the numbers you enter. <a href="index.html">Why it exists</a>.</footer>
+</main>
+<script src="engine.js"></script>
+<script>
+  const num = (id) => Number(document.getElementById(id).value);
+  const list = (id) => document.getElementById(id).value.split(/[\s,]+/).filter((t) => t !== "").map(Number);
+  function show(id, fn) {
+    const out = document.getElementById(id);
+    try { out.textContent = fn(); out.classList.remove("err"); }
+    catch (e) { out.textContent = e.message; out.classList.add("err"); }
+  }
+  function recalc() {
+    show("t-out", () => tripTruth(num("t-d1"), num("t-s1"), num("t-d2"), num("t-s2")));
+    show("m-out", () => timeTruth(num("m-d"), num("m-s")));
+    show("n-out", () => needTruth(num("n-t"), num("n-d"), num("n-s"), num("n-a")));
+  }
+  document.querySelectorAll("input, select").forEach((el) => {
+    el.addEventListener("input", recalc);
+    el.addEventListener("change", recalc);
+  });
+  recalc();
+</script>
+</body>
+</html>
